@@ -14,6 +14,7 @@
 var grid = [];
 var size = 50;
 var t = 0.5;
+var initialN = 1150;
 var c_grid = document.getElementById('grid');
 var context = c_grid.getContext('2d');
 
@@ -104,7 +105,7 @@ function updateThresh (val) {
 }
 
 function start() {
-  initGrid(grid, size, 1150, 1150);
+  initGrid(grid, size, initialN, initialN);
   drawGrid(grid);
 
   window.setInterval(function() {
@@ -112,7 +113,7 @@ function start() {
   }, 500);
 }
 
-initGrid(grid, size, 1000, 1000);
+initGrid(grid, size, initialN, initialN);
 drawGrid(grid);
 document.getElementById('tlabel').innerHTML = "Threshold: " + t;
 document.getElementById('thresh').value = t;
